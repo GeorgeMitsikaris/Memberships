@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Memberships.Areas.Admin.Models.SubscriptionProductModel>
+@using Memberships.Areas.Admin.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.Partial("_CreateButtonPartial")
+</p>
+<table class="table table-condensed table-striped">
+    <tr class="success">
+        <th>
+            @Html.DisplayNameFor(model => model.ProductTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subscriptiontitle)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.ProductTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Subscriptiontitle)
+        </td>
+        @{Html.RenderPartial("_TableButtonsPartial", new SmallButtonModel { SubscriptionId = item.SubscriptionId, ProductId = item.ProductId });}
+    </tr>
+    }
+
+</table>
