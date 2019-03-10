@@ -654,6 +654,32 @@ namespace Memberships.Controllers
 
         }
 
+        [Authorize(Roles ="Admin")]
+        public async Task<ActionResult> RemoveUserSubscription(string userId, int subscriptionId)
+        {
+            try
+            {
+                if (userId == null || userId.Length == 0 || subscriptionId <= 0)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    var subscriptions = db.UserSubscriptions.Where(us => us.UserId.Equals(userId) && us.SubscriptionId.Equals(subscriptionId));
+
+                    db.UserSubscriptions.RemoveRange(subscriptions);
+                    await db.SaveChangesAsync();
+                }                
+            }
+            catch 
+            {
+
+            }
+           return RedirectToAction("Subscriptions", "Account", new { userId = userId });
+        }
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
