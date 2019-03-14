@@ -602,6 +602,7 @@ namespace Memberships.Controllers
             model.UserSubscriptions = await (from us in db.UserSubscriptions
                                              join s in db.Subscriptions
                                              on us.SubscriptionId equals s.Id
+                                             where us.UserId.Equals(userId)
                                              select new UserSubscriptionModel
                                              {
                                                  Id = us.SubscriptionId,
