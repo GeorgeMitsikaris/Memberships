@@ -5,21 +5,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
+using Memberships.Extensions;
 
 namespace Memberships.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var userId = Request.IsAuthenticated ? HttpContext.User.Identity.GetUserId() : null;
-
+            var thumbnails = await new List<ThumbnailModel>().GetProuductThumbnailsAsync(userId);
+            var count = thumbnails.Count() / 4;
             var model = new List<ThumbnailAreaModel>();
-            model.Add(new ThumbnailAreaModel
+
+            for (int i = 0; i <= count; i++)
             {
-                Title = "My area model",
-                Thumbnails = new List<ThumbnailModel>()
-            });
+                model.Add(new ThumbnailAreaModel
+                {
+                    Title = i == 0 ? "My Content" : string.Empty,
+                    Thumbnails = thumbnails.Skip(4 * i).Take(4)
+                });
+            }
             return View(model);
         }
 
