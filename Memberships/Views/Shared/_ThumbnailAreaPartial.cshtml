@@ -13,13 +13,21 @@
         {
             <div class="col-sm-3">
                 <div class="thumbnail">
-                    <img src="@item.ImageUrl" alt="" />
-                    <div class="caption">
-                        <h3><a href="@item.Link">@item.Title</a></h3>
-                        <p>@item.Description</p>
-                    </div>
+                    <div class="thumbnail-container">
+                        <div class="thumbnail-img-container">
+                            <img class="thumbnail-img" src="@item.ImageUrl" alt="" />
+                        </div>
+                        <a href="@item.Link" class="tag text-tag hover-effect">
+                            @item.TagText
+                    </a>
+                    <div class="content-tag tag">@item.ContentTag</div>
+                </div>
+                <div class="caption">
+                    <h3><a href="@item.Link">@item.Title</a></h3>
+                    <p>@item.Description</p>
                 </div>
             </div>
-        }
+        </div>
     }
+}
 </div>

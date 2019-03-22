@@ -2,3 +2,53 @@
     margin: 0 0 15px;
     border-bottom: 2px solid #72c02c;
 }
+
+.thumbnail {
+    padding: 5px;
+}
+
+    .thumbnail .tag {
+        padding: 1px 6px;
+        right: -10px;
+        color: white;
+        display: inline-block;
+        position: absolute;
+    }
+
+    .thumbnail .thumbnail-container {
+        position: relative;
+    }
+
+    .thumbnail .text-tag {
+        background-color: #72c02c;
+        bottom: 5px;
+    }
+
+    .thumbnail .thumbnail-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnail .content-tag {
+        background-color: #f79a47;
+        top: 5px;
+    }
+
+    .thumbnail .thumbnail-img-container {
+        overflow: hidden;
+    }
+
+    .thumbnail a, a:focus, a:hover, a:active {
+        outline: 0 none !important;
+        text-decoration: none;
+    }
+
+    .thumbnail > a:focus, a:hover, a:active {
+        color: #72c02c;
+    }
+
+@media screen and (min-width:480px) {
+    .thumbnail {
+        max-width: 260px;
+    }
+}
