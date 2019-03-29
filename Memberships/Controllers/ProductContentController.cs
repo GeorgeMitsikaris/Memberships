@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Memberships.Extensions;
 
 namespace Memberships.Controllers
 {
@@ -13,12 +14,9 @@ namespace Memberships.Controllers
         [Authorize]
         public async Task<ActionResult> Index(int id)
         {
-            var model = new ProductSectionModel
-            {
-                Title = "The title",
-                Sections = new List<ProductSection>()
-            };
-            return View(model);
+            var userId = Request.IsAuthenticated ? HttpContext.GetUserId() : null;
+            var sections = await SectionExtensions.GetProductSectionAsync(id, userId);
+            return View(sections);
         }
     }
 }

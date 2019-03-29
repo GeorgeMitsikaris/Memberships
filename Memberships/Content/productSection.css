@@ -1,0 +1,14 @@
+﻿.ps-headline{
+    border-bottom: none;
+}
+
+    .ps-headline h2, .ps-headline h3, .ps-headline h4{
+        margin: 0 0 -2px;
+        border-bottom: 2px solid #72c02c;
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+
+    .ps-headline h2{
+        font-size: 22px;
+    }

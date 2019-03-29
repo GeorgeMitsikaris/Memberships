@@ -4,12 +4,14 @@
     ViewBag.Title = "View";
 }
 
-    <div class="headline">
-        <h2>@Model.Title</h2>
-        <a href="/Home/Index" class="btn btn-primary pull-right">
-            <span class="glyphicon glyphicon-arrow-left">
-                Back
-            </span>
-        </a>
-    </div>
+<div class="ps-headline">
+    <h2>@Model.Title</h2>
+    <a href="/Home/Index" class="btn btn-primary pull-right">
+        <span class="glyphicon glyphicon-arrow-left">
+            Back
+        </span>
+    </a>
+</div>
+
+@Html.Partial("_ProductSectionPartial",Model.Sections)
 
