@@ -1,0 +1,17 @@
+﻿.gly-rotate-90{
+    transform: rotate(90deg);
+}
+
+.panel-carret{
+    transition: all .4s;
+}
+
+.panel-carret .glyphicon-play.gly-rotate-90{
+    margin-top:-1px;
+}
+
+.panel-carret .glyphicon-play {
+    margin-top: -4px;
+    margin-right: 4px;
+}
+
