@@ -77,5 +77,23 @@ namespace Memberships.Extensions
                                }).ToListAsync();
             return items;
         }
+
+        public async static Task<ContentViewModel> GetContentAsync(int productId, int itemId)
+        {
+            var db = ApplicationDbContext.Create();
+
+            var section = await (from i in db.Items
+                                 join it in db.ItemTypes
+                                 on i.ItemTypeId equals it.Id
+                                 select new ContentViewModel
+                                 {
+                                     ProductId = productId,
+                                     HTML = i.HTML,
+                                     Description = i.Description,
+                                     Title = i.Title,
+                                     VideoURL = i.Url
+                                 }).FirstOrDefaultAsync();
+            return section;
+        }
     }
 }
