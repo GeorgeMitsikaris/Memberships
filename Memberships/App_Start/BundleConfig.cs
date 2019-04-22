@@ -39,7 +39,8 @@ namespace Memberships
                       "~/Content/thumbnails.css",
                       "~/Content/productSection.css",
                       "~/Content/carret.css",
-                      "~/Content/RegisterCode.css"));
+                      "~/Content/RegisterCode.css",
+                      "~/Content/RegisterUser.css"));
         }
     }
 }
