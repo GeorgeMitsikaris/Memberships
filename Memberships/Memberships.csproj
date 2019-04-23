@@ -420,6 +420,7 @@
     <Content Include="Scripts\JWPlayer.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\registerCode.js" />
+    <Content Include="Scripts\registerUser.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
