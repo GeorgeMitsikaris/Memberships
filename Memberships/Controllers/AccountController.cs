@@ -681,6 +681,9 @@ namespace Memberships.Controllers
            return RedirectToAction("Subscriptions", "Account", new { userId = userId });
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterUserAsync(RegisterUserModel model)
         {
             model.AcceptUserAggrement = true;
@@ -709,7 +712,7 @@ namespace Memberships.Controllers
 
                     return PartialView("_RegisterUserPartial", model);
                 }
-                AddUserErrors(result);
+                return PartialView("_RegisterUserPartial", model);
             }
 
             // If we got this far, something failed, redisplay form

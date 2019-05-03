@@ -14,7 +14,7 @@ namespace Memberships.Extensions
         public static string GetUserFirstName(this IIdentity identity)
         {
             var db = ApplicationDbContext.Create();
-            var user = db.Users.FirstOrDefault(u => u.FirstName.Equals(identity.Name));
+            var user = db.Users.FirstOrDefault(u => u.UserName.Equals(identity.Name));
             return user != null ? user.FirstName : string.Empty;
         }
 

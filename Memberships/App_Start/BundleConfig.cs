@@ -33,7 +33,8 @@ namespace Memberships
                       "~/Scripts/carret.js",
                       "~/Scripts/JWPlayer.js",
                       "~/Scripts/registerCode.js",
-                      "~/Scripts/registerUser.js"));
+                      "~/Scripts/registerUser.js",
+                      "~/Scripts/login.js"));
 
             bundles.Add(new StyleBundle("~/Content/membership").Include(
                       "~/Content/navbar.css",
@@ -41,7 +42,8 @@ namespace Memberships
                       "~/Content/productSection.css",
                       "~/Content/carret.css",
                       "~/Content/RegisterCode.css",
-                      "~/Content/RegisterUser.css"));
+                      "~/Content/RegisterUser.css",
+                      "~/Content/login.css"));
         }
     }
 }
