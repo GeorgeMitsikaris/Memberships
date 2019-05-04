@@ -7,3 +7,15 @@
     background-color:orangered;
     border: 1px solid orangered;
 }
+
+[data-login-user-area].open{
+    display:block;
+    padding-top:0;
+    padding-bottom:3px;
+    margin-right:10px;
+}
+
+[data-login-user-area] .glyphicon-remove {
+    cursor: pointer;
+    color: white;
+}
